@@ -4,6 +4,7 @@ import androidx.core.app.NotificationCompat.MessagingStyle.Message
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.meet9.data.entity.Mahasiswa
 import com.example.meet9.repository.LocalRepositoryMhs
 import com.example.meet9.repository.RepositoryMhs
 import com.example.meet9.ui.navigation.DestinasiDetail
@@ -73,4 +74,15 @@ class DetailMhsViewModel(
             }
         }
     }
+}
+
+fun Mahasiswa.toDetailUiEvent(): MahasiswaEvent {
+    return MahasiswaEvent(
+        nim = nim,
+        nama = nama,
+        jenisKelamin = jenisKelamin,
+        alamat = alamat,
+        kelas = kelas,
+        angkatan = angkatan
+    )
 }
