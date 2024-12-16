@@ -1,6 +1,7 @@
 package com.example.meet9.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
 import com.example.meet9.data.entity.Mahasiswa
@@ -11,4 +12,6 @@ interface MahasiswaDao {
     suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
     @Update
     suspend fun updateMahasiswa(mahasiswa: Mahasiswa)
+    @Delete
+    suspend fun  deleteMahasiswa(mahasiswa: Mahasiswa)
 }
