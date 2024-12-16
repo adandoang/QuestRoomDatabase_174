@@ -34,7 +34,7 @@ class DetailMhsViewModel(
         .filterNotNull()
         .map {
             DetailUiState(
-                detailUiEvent
+                detailUiEvent =
             )
         }
 }
