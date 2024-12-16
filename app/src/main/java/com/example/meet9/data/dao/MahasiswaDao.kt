@@ -16,7 +16,8 @@ interface MahasiswaDao {
     suspend fun updateMahasiswa(mahasiswa: Mahasiswa)
     @Delete
     suspend fun  deleteMahasiswa(mahasiswa: Mahasiswa)
-    @Query("SELECT*FROM mahasiswa ORDER BY nama ASC")
+    @Query("SELECT * FROM mahasiswa ORDER BY nama ASC")
     fun getAllMahasiswa(): Flow<List<Mahasiswa>>
-
+    @Query("SELECT * FROM mahasiswa WHERE nim = :nim")
+    fun getMahasiswa(nim: String): Flow<Mahasiswa>
 }
