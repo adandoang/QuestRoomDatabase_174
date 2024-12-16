@@ -2,6 +2,7 @@ package com.example.meet9.repository
 
 import com.example.meet9.data.dao.MahasiswaDao
 import com.example.meet9.data.entity.Mahasiswa
+import kotlinx.coroutines.flow.Flow
 
 class LocalRepositoryMhs(
     private val mahasiswaDao: MahasiswaDao
@@ -14,5 +15,9 @@ class LocalRepositoryMhs(
     }
     override suspend fun updateMhs(mahasiswa: Mahasiswa) {
         mahasiswaDao.updateMahasiswa(mahasiswa)
+    }
+
+    override fun getAllMhs(): Flow<List<Mahasiswa>> {
+        return mahasiswaDao.getAllMahasiswa()
     }
 }
